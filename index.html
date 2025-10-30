@@ -3,12 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio de Pensamiento de Ingenieria | Ivan Antonio Vicente Martinez</title>
+    <title>Portafolio | Ivan Antonio Vicente Martinez</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
         html {
             scroll-behavior: smooth;
+        }
+        /* Ajuste para asegurar que los iframes llenen el espacio correctamente */
+        .tab-pane .iframe-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        }
+        .tab-pane .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
     </style>
 </head>
@@ -58,60 +72,111 @@
                 <h2 class="display-6 fw-bold text-center mb-4">Un poco Sobre Mí</h2>
                 <div class="col-lg-10 mx-auto text-center">
                     <p class="lead">Soy Ivan Antonio Vicente Martinez, estudiante de Ingeniería Mecatrónica en la Universidad IBEROAMERICANA, una carrera que combina mi pasión por la automatización y el diseño de sistemas inteligentes.</p>
-                    <p>Desde muy niño, he sentido una gran fascinación por el mundo de la Aeronáutica y la ingeniería de vehículos, especialmente los Coches. Me motiva entender cómo la precisión mecánica y la tecnología avanzada se unen para crear máquinas complejas y eficientes. Mi formación en Mecatrónica me da las herramientas para aplicar estos principios en proyectos innovadores.</p>
+                    <p>Desde muy joven, he sentido una gran fascinación por el mundo de la Aeronáutica y la ingeniería de vehículos, especialmente los Coches. Me motiva entender cómo la precisión mecánica y la tecnología avanzada se unen para crear máquinas complejas y eficientes. Mi formación en Mecatrónica me da las herramientas para aplicar estos principios en proyectos innovadores.</p>
                 </div>
             </div>
         </section>
 
-        <section id="trabajo1" class="row align-items-center mb-5 border-bottom pb-4">
-            <div class="col-md-7 order-md-1">
+        <section id="trabajo1" class="row mb-5 border-bottom pb-4">
+            <div class="col-lg-6 order-lg-1">
                 <h3 class="fw-bold text-primary">1. Impresión 3D</h3>
                 <p>En este trabajo aprendimos a modelar en 3D con Tinkercad, crear diseños funcionales y convertirlos a formatos STL para su preparación para la impresión 3D. Durante el proceso ajustamos medidas y configuraciones de impresión para obtener la pieza modelada.</p>
                 <p>Tecnologías clave utilizadas: Tinkercad e Impresora 3D.</p>
             </div>
-            <div class="col-md-5 order-md-2">
-                <iframe width="100%" height="350" src="https://www.tinkercad.com/embed/aqui-va-el-enlace-de-impresion-3d" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen></iframe>
-                <small class="d-block text-muted text-center mt-1">Modelo 3D interactivo de Tinkercad (PENDIENTE)</small>
+            <div class="col-lg-6 order-lg-2">
+                <ul class="nav nav-tabs" id="tab-3d" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="foto-3d-tab" data-bs-toggle="tab" data-bs-target="#foto-3d" type="button" role="tab" aria-controls="foto-3d" aria-selected="true">Foto Real</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="modelo-3d-tab" data-bs-toggle="tab" data-bs-target="#modelo-3d" type="button" role="tab" aria-controls="modelo-3d" aria-selected="false">Modelo Interactivo</button>
+                    </li>
+                </ul>
+                <div class="tab-content border border-top-0 p-3 rounded-bottom shadow-sm" id="tab-3d-content">
+                    <div class="tab-pane fade show active" id="foto-3d" role="tabpanel" aria-labelledby="foto-3d-tab">
+                        <img src="trabajo1.jpeg" class="img-fluid rounded shadow-lg" alt="Imagen del Proyecto 1">
+                    </div>
+                    <div class="tab-pane fade" id="modelo-3d" role="tabpanel" aria-labelledby="modelo-3d-tab">
+                        <div class="iframe-container">
+                             <iframe src="https://www.tinkercad.com/embed/aqui-va-el-enlace-de-impresion-3d" allowfullscreen></iframe>
+                        </div>
+                        <small class="d-block text-muted text-center mt-2">Modelo 3D interactivo (PENDIENTE)</small>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="trabajo2" class="row align-items-center mb-5 border-bottom pb-4">
-            <div class="col-md-7 order-md-2">
+        <section id="trabajo2" class="row mb-5 border-bottom pb-4">
+            <div class="col-lg-6 order-lg-2">
                 <h3 class="fw-bold text-success">2. Corte Láser</h3>
                 <p>En este trabajo utilizamos Tinkercad para diseñar piezas en 2D, exportarlas en formato SVG y prepararlas para la cortadora láser. Aprendimos a realizar ajustes para lograr un ensamble correcto de las piezas por lo que varias veces tuvimos que repetir el corte para que pudieran embonar las piezas.</p>
                 <p>Tecnologías clave utilizadas: Tinkercad y Cortadora Laser.</p>
             </div>
-            <div class="col-md-5 order-md-1">
-                <iframe width="100%" height="350" src="https://www.tinkercad.com/embed/9ebKXg2pa3q?editbtn=1&simlab=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen></iframe>
-                <small class="d-block text-muted text-center mt-1">Modelo 2D interactivo de Tinkercad</small>
+            <div class="col-lg-6 order-lg-1">
+                 <ul class="nav nav-tabs" id="tab-laser" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="foto-laser-tab" data-bs-toggle="tab" data-bs-target="#foto-laser" type="button" role="tab" aria-controls="foto-laser" aria-selected="true">Foto Real</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="modelo-laser-tab" data-bs-toggle="tab" data-bs-target="#modelo-laser" type="button" role="tab" aria-controls="modelo-laser" aria-selected="false">Modelo Interactivo</button>
+                    </li>
+                </ul>
+                <div class="tab-content border border-top-0 p-3 rounded-bottom shadow-sm" id="tab-laser-content">
+                    <div class="tab-pane fade show active" id="foto-laser" role="tabpanel" aria-labelledby="foto-laser-tab">
+                        <img src="trabajo2.jpeg" class="img-fluid rounded shadow-lg" alt="Imagen del Proyecto 2">
+                    </div>
+                    <div class="tab-pane fade" id="modelo-laser" role="tabpanel" aria-labelledby="modelo-laser-tab">
+                        <div class="iframe-container">
+                            <iframe src="https://www.tinkercad.com/embed/9ebKXg2pa3q?editbtn=1&simlab=1" allowfullscreen></iframe>
+                        </div>
+                        <small class="d-block text-muted text-center mt-2">Modelo 2D interactivo de Tinkercad</small>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="trabajo3" class="row align-items-center mb-5">
-            <div class="col-md-7 order-md-1">
+        <section id="trabajo3" class="row mb-5">
+            <div class="col-lg-6 order-lg-1">
                 <h3 class="fw-bold text-warning">3. PCB</h3>
                 <p>En este trabajo diseñamos un PCB utilizando EasyEDA, siguiendo un esquema electrónico básico. Durante el desarrollo fue necesario corregir varias veces el diseño, ajustando las pistas y conexiones para asegurar que la placa funcionara correctamente al momento de fabricarla y montar los componentes.</p>
                 <p>Tecnologías clave utilizadas: EasyEDA y Maquina desvastadora para las placas del PCB.</p>
             </div>
-            <div class="col-md-5 order-md-2">
-                <iframe width="100%" height="350" src="https://www.tinkercad.com/embed/jgeGDkUaO5Z?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen></iframe>
-                <small class="d-block text-muted text-center mt-1">Diseño interactivo de PCB de Tinkercad</small>
+            <div class="col-lg-6 order-lg-2">
+                <ul class="nav nav-tabs" id="tab-pcb" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="foto-pcb-tab" data-bs-toggle="tab" data-bs-target="#foto-pcb" type="button" role="tab" aria-controls="foto-pcb" aria-selected="true">Foto Real</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="modelo-pcb-tab" data-bs-toggle="tab" data-bs-target="#modelo-pcb" type="button" role="tab" aria-controls="modelo-pcb" aria-selected="false">Modelo Interactivo</button>
+                    </li>
+                </ul>
+                <div class="tab-content border border-top-0 p-3 rounded-bottom shadow-sm" id="tab-pcb-content">
+                    <div class="tab-pane fade show active" id="foto-pcb" role="tabpanel" aria-labelledby="foto-pcb-tab">
+                        <img src="trabajo3.jpeg" class="img-fluid rounded shadow-lg" alt="Imagen del Proyecto 3">
+                    </div>
+                    <div class="tab-pane fade" id="modelo-pcb" role="tabpanel" aria-labelledby="modelo-pcb-tab">
+                        <div class="iframe-container">
+                            <iframe src="https://www.tinkercad.com/embed/jgeGDkUaO5Z?editbtn=1" allowfullscreen></iframe>
+                        </div>
+                        <small class="d-block text-muted text-center mt-2">Diseño interactivo de PCB de Tinkercad</small>
+                    </div>
+                </div>
             </div>
         </section>
         
         <section id="contacto" class="py-5 text-center bg-info text-dark rounded shadow-lg mb-5">
             <div class="container">
-                <h2 class="display-6 fw-bold mb-4">¿Hablemos de tu proyecto?</h2>
+                <h2 class="display-6 fw-bold mb-4">Contacto</h2>
                 <p class="lead">Estoy abierto a colaborar en proyectos de diseño, automatización o robótica.</p>
-                <p class="h4">Email: **[Tu Correo Electrónico Aquí]**</p>
-                <p class="h4">LinkedIn: **[Tu Enlace de LinkedIn Aquí]**</p>
+                <p class="h4">Email: ivanvicentr98@gmail.com</p>
+                <p class="h4">Telefono: 55 37369664</p>
             </div>
         </section>
         
     </main>
     
     <footer class="bg-dark text-white text-center py-3 border-top">
-        <p class="mb-0">&copy; 2025 Pensamiento de Ingenieria | Ivan Antonio Vicente Martinez</p>
+        <p class="mb-0">&copy; 2025 Pensamiento de Ingenieria i | Ivan Antonio Vicente Martinez</p>
         <small class="text-muted">Desarrollado con Bootstrap</small>
     </footer>
 
